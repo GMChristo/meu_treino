@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meu_treino/home/home_page.dart';
+import 'package:meu_treino/treino_details/treino_details.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      // home: const HomePage(),
+      routes: {
+        '/': (_) => HomePage(),
+        TreinoDetails.routeName: (_) => TreinoDetails(),
+      },
     );
   }
 }
