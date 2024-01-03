@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meu_treino/home/home_page.dart';
-import 'package:meu_treino/treino_details/treino_details.dart';
+import 'package:meu_treino/treino_details/treino_details_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       ),
       // home: const HomePage(),
       routes: {
-        '/': (_) => HomePage(),
-        TreinoDetails.routeName: (_) => TreinoDetails(),
+        '/': (_) => const HomePage(),
+        TreinoDetailsPage.routeName: (_) => const TreinoDetailsPage(),
       },
     );
   }

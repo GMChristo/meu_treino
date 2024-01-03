@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meu_treino/treino_details/treino_details.dart';
+import 'package:meu_treino/treino_details/treino_details_page.dart';
 
 class HomePage extends StatelessWidget {
   static const String routeName = '/homePage';
@@ -69,7 +69,7 @@ class Cartao extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.of(context).pushNamed(TreinoDetails.routeName);
+        Navigator.of(context).pushNamed(TreinoDetailsPage.routeName);
 
         /// forma de navegação sem utilizar o nome da rota
         // Navigator.of(context).push(
