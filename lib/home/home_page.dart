@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:meu_treino/treino_details/treino_details_page.dart';
 
@@ -49,11 +51,28 @@ class HomePage extends StatelessWidget {
             'assets/jojo pose2.png',
             opacity: const AlwaysStoppedAnimation(0.1),
           ),
-          const Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+          // const SingleChildScrollView(
+          //   padding: EdgeInsets.all(10),
+          //   child: Column(
+          //     children: [
+          //       Cartao(),
+          //       Cartao(),
+          //     ],
+          //   ),
+          // ),
+
+          Column(
             children: [
-              Cartao(),
-              CartaoDetails(),
+              Container(
+                margin: const EdgeInsets.all(5),
+                padding: const EdgeInsets.all(5),
+                child: const Column(
+                  children: [
+                    Cartao(),
+                    Cartao(),
+                  ],
+                ),
+              ),
             ],
           )
         ],
@@ -67,8 +86,10 @@ class Cartao extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
+    // return ElevatedButton(
+    // onPressed: () {
+    return InkWell(
+      onTap: () {
         Navigator.of(context).pushNamed(TreinoDetailsPage.routeName);
 
         /// forma de navegação sem utilizar o nome da rota
@@ -77,33 +98,29 @@ class Cartao extends StatelessWidget {
         //     builder: (context) => TreinoDetails(),
         //   ),
         // );
-        print(Text('Clicou!'));
+        print('Clicou!');
       },
       child: Container(
-        // margin: const EdgeInsets.all(10),
-        // padding: const EdgeInsets.all(10),
+        width: MediaQuery.of(context).size.width,
+        margin: const EdgeInsets.all(5),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.white),
         ),
-        child: const Text('Treino A - Costas\nRealizado em: 23/12/2023'),
+        child: const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              children: [
+                Text('Treino A - Costas'),
+                Text('Realizado em: 23/12/2023'),
+              ],
+            ),
+          ],
+        ),
       ),
-    );
-  }
-}
-
-class CartaoDetails extends StatelessWidget {
-  const CartaoDetails({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(10),
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        color: Colors.blueGrey,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: const Text('Card detalhado'),
     );
   }
 }
