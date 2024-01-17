@@ -16,7 +16,7 @@
     {
     "nome": "Supino 45º",
     "serie": "3",
-    "repeticoes": "38 iso 3s + 10 diretas",
+    "repeticoes": "8 iso 3s + 10 diretas",
     "carga": "8",
     "exemplo": "assets/serieA/Supino inclinado com halteres.gif"
     },

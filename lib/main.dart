@@ -17,8 +17,9 @@ class MyApp extends StatelessWidget {
       title: 'Meu Treino',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: const ColorScheme.dark(), //Seta a aplicação para utilizar o tema escuro
+        // useMaterial3: true,
       ),
       // home: const HomePage(),
       routes: {

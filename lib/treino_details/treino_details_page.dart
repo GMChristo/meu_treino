@@ -35,6 +35,7 @@ class _TreinoDetailsPageState extends State<TreinoDetailsPage> {
   @override
   Widget build(BuildContext context) {
     print('TreinoDetails!');
+    print('Largura page ${MediaQuery.of(context).size.width}');
     return Scaffold(
       appBar: AppBar(
         title: const Text('Pagina detalhe treino'),

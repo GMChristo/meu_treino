@@ -42,58 +42,65 @@ class CardCustom extends StatelessWidget {
                   ),
                 ],
               ),
-              Container(
-                // color: Colors.blueGrey,
-                width: MediaQuery.of(context).size.width * .55,
-                height: 90,
-                padding: const EdgeInsets.only(left: 10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      // 'Voador Peitoral',
-                      serie.nome,
-                      style: const TextStyle(fontSize: 20),
-                    ),
-                    Row(
-                      children: [
-                        const Icon(Icons.replay, size: 15),
-                        Text(
-                          ' Serie: ${serie.serie}',
-                          style: const TextStyle(fontSize: 15),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Icon(Icons.repeat, size: 15),
-                        Text(
-                          ' Repetições: ${serie.repeticoes}',
-                          style: const TextStyle(fontSize: 15),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Icon(Icons.fitness_center_rounded, size: 15),
-                        Text(
-                          ' Peso: ${serie.carga} KG',
-                          style: const TextStyle(fontSize: 15),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
               Column(
                 children: [
-                  Checkbox(
-                    value: false,
-                    onChanged: (_) {},
-                    shape: const CircleBorder(),
+                  Container(
+                    // color: Colors.blueGrey,
+                    width: MediaQuery.of(context).size.width * .60,
+                    height: 100,
+                    padding: const EdgeInsets.only(left: 5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          // 'Voador Peitoral',
+                          serie.nome,
+                          style: const TextStyle(fontSize: 18),
+                        ),
+                        Row(
+                          children: [
+                            const Icon(Icons.replay, size: 15),
+                            Text(
+                              ' Serie: ${serie.serie}',
+                              style: const TextStyle(fontSize: 14),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            const Icon(Icons.repeat, size: 15),
+                            Text(
+                              ' Repetições: ${serie.repeticoes}',
+                              style: const TextStyle(fontSize: 14),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            const Icon(Icons.fitness_center_rounded, size: 15),
+                            Text(
+                              ' Peso: ${serie.carga} KG',
+                              style: const TextStyle(fontSize: 14),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ],
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * .05,
+                child: Column(
+                  children: [
+                    Checkbox(
+                      value: false,
+                      onChanged: (_) {},
+                      shape: const CircleBorder(),
+                    ),
+                  ],
+                ),
               ),
             ],
           )
