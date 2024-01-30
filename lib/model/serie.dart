@@ -11,6 +11,7 @@ class Serie {
   // Exercicio exercicio;
   String nome;
   String exemplo;
+  bool feito;
 
   Serie({
     // required this.id,
@@ -20,7 +21,7 @@ class Serie {
     // this.exercicio,
     required this.nome,
     required this.exemplo,
-  });
+  }) : feito = false;
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{

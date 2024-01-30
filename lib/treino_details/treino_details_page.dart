@@ -17,6 +17,8 @@ class TreinoDetailsPage extends StatefulWidget {
 
 class _TreinoDetailsPageState extends State<TreinoDetailsPage> {
   var series = <Serie>[];
+  final String nomeSerie = 'serieA';
+  bool treinoFinalizado = false;
 
   @override
   void initState() {
@@ -25,7 +27,7 @@ class _TreinoDetailsPageState extends State<TreinoDetailsPage> {
   }
 
   Future<void> _loadSeries() async {
-    final seriesJson = await rootBundle.loadString('assets/serieA/serieA.json');
+    final seriesJson = await rootBundle.loadString('assets/serieA/$nomeSerie.json');
     setState(() {
       var serieList = jsonDecode(seriesJson);
       series = serieList.map<Serie>((s) => Serie.fromMap(s)).toList();
@@ -38,7 +40,47 @@ class _TreinoDetailsPageState extends State<TreinoDetailsPage> {
     print('Largura page ${MediaQuery.of(context).size.width}');
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pagina detalhe treino'),
+        // title: const Text('Pagina detalhe treino'),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Detalhes do treino',
+                  style: TextStyle(
+                    fontSize: 10,
+                  ),
+                ),
+                Text(
+                  nomeSerie,
+                  style: const TextStyle(
+                    fontSize: 15,
+                  ),
+                ),
+              ],
+            ),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  treinoFinalizado = !treinoFinalizado;
+                });
+              },
+              icon: ClipOval(
+                child: Container(
+                  // color: context.primaryColor.withAlpha(20),
+                  padding: const EdgeInsets.all(8),
+                  child: Icon(
+                    !treinoFinalizado ? Icons.check_box_outline_blank : Icons.check_box_outlined,
+                    size: 20,
+                    // color: context.primaryColor,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
       body: ListView.separated(
         separatorBuilder: (context, index) {

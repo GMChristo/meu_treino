@@ -7,6 +7,8 @@ class HomePage extends StatelessWidget {
   static const String routeName = '/homePage';
   const HomePage({super.key});
 
+  static List _cardsSeries = ['Treino A', 'Treino B', 'Treino C'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,20 +63,29 @@ class HomePage extends StatelessWidget {
           //   ),
           // ),
 
-          Column(
-            children: [
-              Container(
-                margin: const EdgeInsets.all(5),
-                padding: const EdgeInsets.all(5),
-                child: const Column(
-                  children: [
-                    Cartao(),
-                    Cartao(),
-                  ],
-                ),
-              ),
-            ],
-          )
+          ListView.builder(
+            itemCount: _cardsSeries.length,
+            itemBuilder: (context, index) {
+              final cardSerie = _cardsSeries[index];
+              return Cartao(serie: cardSerie);
+            },
+          ),
+
+          //* Trecho abaixo eh a forma anterio onde nao era utilizado listView
+          // Column(
+          //   children: [
+          //     Container(
+          //       margin: const EdgeInsets.all(5),
+          //       padding: const EdgeInsets.all(5),
+          //       child: const Column(
+          //         children: [
+          //           Cartao(),
+          //           Cartao(),
+          //         ],
+          //       ),
+          //     ),
+          //   ],
+          // )
         ],
       ),
     );
@@ -82,7 +93,8 @@ class HomePage extends StatelessWidget {
 }
 
 class Cartao extends StatelessWidget {
-  const Cartao({super.key});
+  final serie;
+  const Cartao({this.serie, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -108,14 +120,14 @@ class Cartao extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.white),
         ),
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               children: [
-                Text('Treino A - Costas'),
-                Text('Realizado em: 23/12/2023'),
+                Text('$serie - Costas'),
+                const Text('Realizado em: 23/12/2023'),
               ],
             ),
           ],

@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:meu_treino/model/serie.dart';
 
-class CardCustom extends StatelessWidget {
+class CardCustom extends StatefulWidget {
   Serie serie = Serie(repeticoes: '', carga: '', serie: '', nome: '', exemplo: '');
   // const CardCustom(BuildContext context, {super.key});
   CardCustom(this.serie, {super.key});
 
+  @override
+  State<CardCustom> createState() => _CardCustomState();
+}
+
+class _CardCustomState extends State<CardCustom> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,7 +43,7 @@ class CardCustom extends StatelessWidget {
                     //   serie.exemplo,
                     //   fit: BoxFit.fill,
                     // ),
-                    child: Image.asset(serie.exemplo),
+                    child: Image.asset(widget.serie.exemplo),
                   ),
                 ],
               ),
@@ -55,14 +60,14 @@ class CardCustom extends StatelessWidget {
                       children: [
                         Text(
                           // 'Voador Peitoral',
-                          serie.nome,
+                          widget.serie.nome,
                           style: const TextStyle(fontSize: 18),
                         ),
                         Row(
                           children: [
                             const Icon(Icons.replay, size: 15),
                             Text(
-                              ' Serie: ${serie.serie}',
+                              ' Serie: ${widget.serie.serie}',
                               style: const TextStyle(fontSize: 14),
                             ),
                           ],
@@ -71,7 +76,7 @@ class CardCustom extends StatelessWidget {
                           children: [
                             const Icon(Icons.repeat, size: 15),
                             Text(
-                              ' Repetições: ${serie.repeticoes}',
+                              ' Repetições: ${widget.serie.repeticoes}',
                               style: const TextStyle(fontSize: 14),
                             ),
                           ],
@@ -80,7 +85,7 @@ class CardCustom extends StatelessWidget {
                           children: [
                             const Icon(Icons.fitness_center_rounded, size: 15),
                             Text(
-                              ' Peso: ${serie.carga} KG',
+                              ' Peso: ${widget.serie.carga} KG',
                               style: const TextStyle(fontSize: 14),
                             ),
                           ],
@@ -95,8 +100,14 @@ class CardCustom extends StatelessWidget {
                 child: Column(
                   children: [
                     Checkbox(
-                      value: false,
-                      onChanged: (_) {},
+                      value: widget.serie.feito,
+                      checkColor: Colors.white,
+                      activeColor: Colors.teal[900],
+                      onChanged: (_) {
+                        setState(() {
+                          widget.serie.feito = !widget.serie.feito;
+                        });
+                      },
                       shape: const CircleBorder(),
                     ),
                   ],
