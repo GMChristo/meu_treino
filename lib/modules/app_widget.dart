@@ -31,7 +31,7 @@ class _AppWidgetState extends State<AppWidget> {
       ),
       // initialRoute: '/',
       routes: {
-        SerieDetailsPage.routeName: (_) => const SerieDetailsPage(),
+        SerieDetailsPage.routeName: (_) => SerieDetailsPage(),
       },
       home: const HomePage(),
     );
