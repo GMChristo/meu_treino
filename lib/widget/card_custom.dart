@@ -3,7 +3,6 @@ import 'package:meu_treino/model/serie.dart';
 
 class CardCustom extends StatefulWidget {
   Serie serie = Serie(repeticoes: '', carga: '', serie: '', nome: '', exemplo: '');
-  // const CardCustom(BuildContext context, {super.key});
   CardCustom(this.serie, {super.key});
 
   @override
@@ -21,7 +20,6 @@ class _CardCustomState extends State<CardCustom> {
       width: MediaQuery.of(context).size.width,
       height: 110,
       padding: const EdgeInsets.all(5),
-      // margin: EdgeInsets.all(2),
       child: Column(
         children: [
           Row(
@@ -33,16 +31,9 @@ class _CardCustomState extends State<CardCustom> {
                   Container(
                     width: MediaQuery.of(context).size.width * .25,
                     height: 100,
-                    // alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      // color: Colors.amber[700],
                     ),
-                    // child: Image.network(
-                    //   // 'https://4.bp.blogspot.com/-1Fxrred1huU/V1tHYN2ShWI/AAAAAAAAAoI/qKn7HQILGR8DHl1jQ45mpXcM6bt2OscCgCK4B/s1600/Crucifixo-com-aparelho-voador.jpg',
-                    //   serie.exemplo,
-                    //   fit: BoxFit.fill,
-                    // ),
                     child: Image.asset(widget.serie.exemplo),
                   ),
                 ],
@@ -50,7 +41,6 @@ class _CardCustomState extends State<CardCustom> {
               Column(
                 children: [
                   Container(
-                    // color: Colors.blueGrey,
                     width: MediaQuery.of(context).size.width * .60,
                     height: 100,
                     padding: const EdgeInsets.only(left: 5),
@@ -96,13 +86,22 @@ class _CardCustomState extends State<CardCustom> {
                 ],
               ),
               Container(
-                width: MediaQuery.of(context).size.width * .05,
+                width: MediaQuery.of(context).size.width * .07,
                 child: Column(
                   children: [
+                    Switch(
+                      activeColor: Colors.blueGrey[50],
+                      value: widget.serie.feito,
+                      onChanged: (bool value) {
+                        setState(() {
+                          widget.serie.feito = value;
+                        });
+                      },
+                    ),
                     Checkbox(
                       value: widget.serie.feito,
-                      checkColor: Colors.white,
-                      activeColor: Colors.teal[900],
+                      checkColor: Colors.grey[800],
+                      activeColor: Colors.blueGrey[50],
                       onChanged: (_) {
                         setState(() {
                           widget.serie.feito = !widget.serie.feito;

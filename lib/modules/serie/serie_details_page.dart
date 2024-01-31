@@ -5,17 +5,17 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:meu_treino/model/serie.dart';
-import 'package:meu_treino/modulos/card_custom.dart';
+import 'package:meu_treino/widget/card_custom.dart';
 
-class TreinoDetailsPage extends StatefulWidget {
-  static const String routeName = '/treinoDetails';
-  const TreinoDetailsPage({super.key});
+class SerieDetailsPage extends StatefulWidget {
+  static const String routeName = '/serieDetails';
+  const SerieDetailsPage({super.key});
 
   @override
-  State<TreinoDetailsPage> createState() => _TreinoDetailsPageState();
+  State<SerieDetailsPage> createState() => _SerieDetailsPageState();
 }
 
-class _TreinoDetailsPageState extends State<TreinoDetailsPage> {
+class _SerieDetailsPageState extends State<SerieDetailsPage> {
   var series = <Serie>[];
   final String nomeSerie = 'serieA';
   bool treinoFinalizado = false;
@@ -36,7 +36,7 @@ class _TreinoDetailsPageState extends State<TreinoDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    print('TreinoDetails!');
+    print('SerieDetailsPage!');
     print('Largura page ${MediaQuery.of(context).size.width}');
     return Scaffold(
       appBar: AppBar(
