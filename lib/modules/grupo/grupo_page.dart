@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meu_treino/modules/serie/serie_details_page.dart';
 
 class GrupoPage extends StatelessWidget {
-  static List _cardsSeries = ['Treino A', 'Treino B', 'Treino C'];
+  static List _cardsSeries = ['Serie A', 'Serie B', 'Serie C'];
 
   const GrupoPage({super.key});
 
@@ -12,15 +12,15 @@ class GrupoPage extends StatelessWidget {
       itemCount: _cardsSeries.length,
       itemBuilder: (context, index) {
         final cardSerie = _cardsSeries[index];
-        return Cartao(serie: cardSerie);
+        return Cartao(nomeSerie: cardSerie);
       },
     );
   }
 }
 
 class Cartao extends StatelessWidget {
-  final serie;
-  const Cartao({this.serie, super.key});
+  final String nomeSerie;
+  const Cartao({required this.nomeSerie, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +29,9 @@ class Cartao extends StatelessWidget {
     // onPressed: () {
     return InkWell(
       onTap: () {
-        Navigator.of(context).pushNamed(SerieDetailsPage.routeName);
+        Navigator.of(context)
+            .pushNamed(SerieDetailsPage.routeName, arguments: {'nomeSerie': nomeSerie.replaceAll(new RegExp(r"\s+\b|\b\s"), "").toLowerCase()});
 
-        /// forma de navegação sem utilizar o nome da rota
-        // Navigator.of(context).push(
-        //   MaterialPageRoute(
-        //     builder: (context) => TreinoDetails(),
-        //   ),
-        // );
         print('Clicou!');
       },
       child: Container(
@@ -53,7 +48,7 @@ class Cartao extends StatelessWidget {
           children: [
             Column(
               children: [
-                Text('$serie - Costas'),
+                Text('$nomeSerie - Costas'),
                 const Text('Realizado em: 23/12/2023'),
               ],
             ),

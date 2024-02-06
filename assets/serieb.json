@@ -1,0 +1,93 @@
+[
+    {
+    "nome": "Rosca bíceps direto com giro",
+    "serie": "3",
+    "repeticoes": "12",
+    "carga": "20",
+    "exemplo": "assets/Image not found.png"
+    },
+    {
+    "nome": "Rosca bíceps com Barra H em pé",
+    "serie": "3",
+    "repeticoes": "12",
+    "carga": "10",
+    "exemplo": "assets/serieB/Rosca direta com pegada aberta.gif"
+    },
+    {
+    "nome": "Rosca bíceps com barra W banco Scott",
+    "serie": "3",
+    "repeticoes": "12",
+    "carga": "10",
+    "exemplo": "assets/serieB/Rosca scott.gif"
+    },
+    {
+    "nome": "Rosca bíceps 21",
+    "serie": "3",
+    "repeticoes": "21",
+    "carga": "12",
+    "exemplo": "assets/Image not found.png"
+    },
+    {
+    "nome": "Rosca punho HBC",
+    "serie": "1",
+    "repeticoes": "15",
+    "carga": "10",
+    "exemplo": "assets/serieB/Rosca punho sentado.gif"
+    },
+    {
+    "nome": "Extensão de punho HBC ou barra",
+    "serie": "3",
+    "repeticoes": "12 a 15",
+    "carga": "",
+    "exemplo": "assets/serieB/Rosca punho invertida sentado.gif"
+    },
+    {
+    "nome": "Tríceps cruzado HBC",
+    "serie": "3",
+    "repeticoes": "15",
+    "carga": "",
+    "exemplo": "assets/Image not found.png"
+    },
+    {
+    "nome": "Tríceps testa barra W",
+    "serie": "3",
+    "repeticoes": "15",
+    "carga": "10",
+    "exemplo": "assets/Image not found.png"
+    },
+    {
+    "nome": "Tríceps coice cross unilateral",
+    "serie": "3",
+    "repeticoes": "15",
+    "carga": "",
+    "exemplo": "assets/serieB/Tríceps coice com halteres.gif"
+    },
+    {
+    "nome": "Tríceps cross barra reta",
+    "serie": "3",
+    "repeticoes": "30",
+    "carga": "",
+    "exemplo": "assets/Image not found.png"
+    },
+    {
+    "nome": "Tríceps mergulho no banco",
+    "serie": "3",
+    "repeticoes": "20",
+    "carga": "",
+    "exemplo": "assets/Image not found.png"
+    },
+    {
+    "nome": "Abs supra no solo pernas elevadas",
+    "serie": "3",
+    "repeticoes": "max",
+    "carga": "",
+    "exemplo": "assets/Image not found.png"
+    },
+    {
+    "nome": "Abs oblíquo pernas cruzadas solo",
+    "serie": "3",
+    "repeticoes": "max",
+    "carga": "",
+    "exemplo": "assets/Image not found.png"
+    }
+]

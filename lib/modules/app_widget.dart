@@ -31,7 +31,13 @@ class _AppWidgetState extends State<AppWidget> {
       ),
       // initialRoute: '/',
       routes: {
-        SerieDetailsPage.routeName: (_) => SerieDetailsPage(),
+        // SerieDetailsPage.routeName: (_) => SerieDetailsPage(),
+        SerieDetailsPage.routeName: (context) {
+          final args = ModalRoute.of(context)?.settings.arguments as Map;
+          return SerieDetailsPage(
+            nomeSerie: args['nomeSerie'],
+          );
+        },
       },
       home: const HomePage(),
     );

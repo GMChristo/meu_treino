@@ -63,6 +63,8 @@ flutter:
   assets:
     - assets/
     - assets/serieA/
+    - assets/serieB/
+    - assets/serieC/
     # - assets/serie.json
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
